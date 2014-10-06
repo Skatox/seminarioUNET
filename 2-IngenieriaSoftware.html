@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Seminario | UNET</title>
+
+		<meta name="description" content="Láminas de la clase de seminario">
+		<meta name="author" content="Miguel Useche">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/unet.css" id="theme-unet">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="slide intro">
+					<div class="unet">
+						<div class="left">
+							<img class="noborder" src="img/UNET.png" alt="UNET Logo">
+						</div>
+						<div class="left">
+							<p id="definition-header">
+								Universidad Nacional Experimental Del Táchira<br />
+								Decanato De Docencia<br />
+								Dpto. Ingeniería Informática
+							</p>
+						</div>
+					</div>
+
+					<h1 class="clear">
+						Seminario
+					</h1>
+					<h2 class="text-center">
+						Código 0424902T
+					</h2>
+					<div class="text-center">
+						<p>
+							<a href="http://skatox.com/" target="_blank">Prof. Miguel Useche</a> <br>
+							<a href="mailto:miguel.useche@unet.edu.ve" target="_blank">miguel.useche@unet.edu.ve</a> - 
+							<a href="http://twitter.com/skatox" target="_blank">@skatox</a>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Objetivo de la clase</h2>
+					<ul>
+						<li class="fragment">Repasar el proceso de desarrollo de software.</li>
+						<li class="fragment">Comprender la importancia de la Ingeniería de Software.</li>
+						<li class="fragment">Conocer alguna de las metodologías ágiles de desarrollo mas utilizadas.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Ingeniería de Software</h2>
+					<img src="img/softengineer/software-engineer.jpg" height="333" width="498">
+					<p>
+						Desarrollemos un concepto
+					</p>
+					<aside class="notes">
+						Preguntarles por qué es Ingeniería y no un técnico.
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>¿Diferencias con <br> Ingeniería de Computación?</h2>
+						<h1>¿?</h1>
+					</section>
+
+					<section>
+						<h2>Ing. Computación</h2>
+						<p>Se enfoca en las bases de la computación como:</p>
+						<ul>
+							<li>Algoritmos</li>
+							<li>Lenguajes de programación</li>
+							<li>Teoríás de computación</li>
+							<li>Inteligencia artificial</li>
+							<li>Diseño de hardware</li>
+						</ul>
+
+						<aside class="notes">
+							Se enfoca en problemas computacionales como 
+							BD, compiladores y sistemas operativos.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Ing. Informática y de Software</h2>
+						<ul>
+							<li>Se enfoca en el apoyo tecnológico y gerencial para sistemas grandes y complejos.</li>
+							<li>
+								Su tarea es mejorar los principios de ingeniería que soportan el ciclo de vida
+								de las tecnologías de una organización.
+							</li>
+							<li>
+								Se enfoca en resolver problemas del mundo real aplicando su
+								<strong>juicio profesional</strong>, el cual es adquirido con la experiencia, entrenamientos.
+							</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Conceptos de Ingeniería de Software</h2>
+						<blockquote>
+							"Ingeniería de software es la aplicación práctica del conocimiento científico al diseño y 
+							construcción de programas de computadora y a la <strong>documentación</strong> asociada 
+							requerida para desarrollar, operar y mantenerlos.
+							Se conoce también como desarrollo de software o <strong>producción de software</strong>."
+						</blockquote>
+						<p>Barry Bohem (1976)</p>
+
+						<aside class="notes">
+							Explicar las palabras marcadas en negrita, la importancia de documentar
+							y como todo se reduce a producir software
+						</aside>
+					</section>
+
+					<section>
+						<h2>Conceptos de Ingeniería de Software</h2>
+						<blockquote>
+							"...El establecimiento y uso de los <strong>principios de ingeniería</strong>
+							para <strong>economicamente</strong> obtener software que es confiable y trabaja
+							eficientemente en máquinas <strong>reales</strong>."
+						</blockquote>
+						<p>IEEE Standard Glossary of Software Engineering Terminology (1990)</p>
+
+						<aside class="notes">
+							Explicar las palabras marcadas en negrita, el uso de ingeniera, de otras materias,
+							econicamente rentable, confiable y en computadoras reales.
+						</aside>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>¿Por qué aplicar <br> Ing. Software?</h2>
+						<img  class="fragment" src="img/softengineer/whySoftwareEngineering.jpg">
+					</section>
+					<section>
+						<h2>¿Por qué aplicar <br> Ing. Software?</h2>
+						<ul>
+							<li class="fragment">
+								Mejor calidad de software:
+								<ul>
+									<li>Mejor mantenimiento.</li>
+									<li>Reutilización de código.</li>
+									<li>Garantía de cumplir con los requerimientos.</li>
+								</ul>
+							</li>
+							<li class="fragment">Reducción de tiempo de desarrollo y costos.</li>
+							<li class="fragment">Aprovechamiento eficiente de los recursos.</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Ciclo de desarrollo de software</h2>
+					<img src="img/softengineer/cicloSoftware.png" style="width: 70%">
+					<p class="note">Fuente: 
+						<a href="http://sitcomsoluciones.com/" target="_blank">SITCOM Soluciones</a>
+					</p>	
+					<aside class="notes">
+						El desarrollo es un ciclo, lo que lleva mas tiempo y costo es el mantenimiento. Por eso
+						en el software libre el negocio no es la venta del software sino el mantenimiento.
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Metodologías de <br> desarrollo de software</h2>
+						<p>
+							Es una parte del desarrollo de software, el cual consiste en la 
+							estructuración, planificación y control del proceso de desarrollo
+							de sistemas.
+						</p>
+						<p>
+							Entre los modelos mas conocidos están:
+							Cascada, Prototipos, Espiral, Incremental, RAD.
+						</p>
+					</section>
+					<section>
+						<h2>Metodologías ágiles</h2>
+						<ul>
+							<li class="fragment">Estan basadas en el desarrollo iterativo e incremental.</li>
+							<li class="fragment">La comunicación se hace en "persona" en vez de medios escritos.</li>
+							<li class="fragment">Se desarrolla en unidades de tiempo llamadas iteraciones.</li>
+						</ul>
+						<aside class="notes">
+							Las iteraciones suelen ser de 1 a 4 semanas.
+						</aside>
+					</section>
+
+
+					<section>
+						<h2>Metodologías ágiles</h2>
+						<div class="half left">
+							<img src="img/softengineer/version.gif" alt="Iteracion">
+							<p>Proceso de una iteración</p>
+						</div>
+
+						<div class="half left">
+							<img src="img/softengineer/versiones.gif" alt="Versiones">
+							<p>Iteraciones a lo largo del tiempo</p>
+						</div>
+
+						<p class="notes clear">
+							<a href="http://audiemangt.blogspot.com/2010/05/metodologia-agil-msf-microsoft-solution.html" title="Ir a la fuente">
+								Fuente: La Bitacora de AudieMan.
+							</a>
+						</p>
+					</section>
+
+					<section>
+						<h3>Metodologías  <br>tradicionales vs ágiles</h3>
+						<img src="img/softengineer/tradicionalVsAgile.jpg">
+					</section>
+					<section>
+						<h3>Metodologías  <br>tradicionales vs ágiles</h3>
+						<table>
+							<tr>
+								<th>Tradicionales</th>
+								<th>Ágiles</th>
+							</tr>
+							<tr>
+								<td>Planes rígidos</td>
+								<td>Flexible ante cambios</td>
+							</tr>
+							<tr>
+								<td>Negociación contractual</td>
+								<td>Colaboración con el cliente</td>
+							</tr>
+							<tr>
+								<td>Se valoran los procesos</td>
+								<td>Se valoran las personas</td>
+							</tr>
+							<tr>
+								<td>Dependencia en modelos</td>
+								<td>Poca dependencia en la arq. de software</td>
+							</tr>
+						</table>
+						<aside class="notes">
+							Los tradicionales son buenos cuando hay procesos bien definidos y no cambian en el tiempo
+							, los agiles son buenos cuando no se conoce bien el proceso del negocio.
+						</aside>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Métodologias ágiles</h2>
+					<ul>
+						<li>Scrum</li>
+						<li>XP</li>
+						<li>TDD</li>
+						<li>FDD</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>SCRUM</h2>
+						<ul>
+							<li>
+								Diseñada para afrontar cambios en los requerimientos por parte
+								del cliente.
+							</li>
+							<li>
+								Asume los problemas no pueden ser totalmente comprendidos o definidos,
+								por eso hace entregas rápidas para responder a los requerimientos.
+							</li>
+							<li>
+								Es una de las metodologías mas utilizadas en el ámbito empresarial.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>SCRUM</h2>
+						<h3>Roles</h3>
+						<ul>
+							<li>
+								<strong>Product owner:</strong>
+								representa al cliente, se encarga de escribir las historias de usuario,
+								anuncia lanzamientos, comunica el estado del proyecto, organiza las 
+								prioridades, entre otros.
+
+							</li>
+							<li>
+								<strong>Developer Team</strong>
+								es el equipo que ejecuta las fases de desarrollo del software.
+							</li>
+							<li>
+								<strong>Scrum Master</strong>
+								se encarga de hacer cumplir la metodología, organiza las reuniones, no
+								sustituye al  <em>project manager</em> porque el equipo de desarrollo
+								es auto-organizable.
+							</li>
+						</ul>
+						<aside class="notes">
+							Pueden existir varios roles pero solo se definen 3, el SCRUM Master no es el lider
+							del proyecto.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Eventos de SCRUM</h2>
+						<h3>Sprint (Iteración)</h3>
+						<ul>
+							<li>Es la unidad mínima de desarrollo, posee un tiempo fijo de duración.</li>
+							<li>Todos los <em>sprints</em> son definidos al principio del proyecto.</li>
+							<li>
+								Al final de un <em>sprint</em>, el software debe estar potencialmente listo 
+								y haber pasado por todas las  etapa de desarrollo.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Eventos de SCRUM</h2>
+						<h3>Reuniones</h3>
+						<ul>
+							<li>
+								Existen reuniones diarias para responder:
+								<ul>
+									<li>¿Qué has hecho desde ayer?</li>
+									<li> ¿Qué es lo que harás hasta la reunión de mañana?</li>
+									<li>¿Has tenido algún problema que te haya impedido alcanzar tu objetivo?</li>
+								</ul>
+							</li>
+							<li>
+								Se hacen reuniones antes y después del <em>Sprint</em>, la primera
+								para planificación y la otra para revisión.
+							</li>
+						</ul>
+						<aside class="notes">
+							El Scrum Master se encarga de resolver los problemas que
+							impidan alcanzar el objetivo. La reunion diaria dura 15 y las
+							de sprint no deben pasar de 1 hora.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Herramientas de SCRUM</h2>
+						<h3>Product Backlog</h3>
+						<img src="img/softengineer/whiteboard.jpg" >
+						<aside class="notes">
+							Contiene las historias de usuario, funcionalidades, prioridades y solo
+							puede ser actualizado por el product owner.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Herramientas de SCRUM</h2>
+						<h3>Sprint Backlog</h3>
+						<img src="img/softengineer/SprintBacklog.jpg" >
+						<aside class="notes">
+							Es la lista de trabajo que el equipo de desarrollo debe realizar 
+							para la próxima entrega. No se asignan sino cada quien la toma 
+							en base a la prioridad y sus requisitos.
+						</aside>
+					</section>
+					<section>
+						<h2>SCRUM</h2>
+						<img src="img/softengineer/scrum.png" >
+						<p>Resumen del proceso de desarrollo con SCRUM</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>XP Extreme Programming</h2>
+					
+				</section>
+
+				<section>
+					<h1>¿Preguntas?</h1>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 960,
+    			height: 500,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
