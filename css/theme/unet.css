@@ -20,9 +20,10 @@ body {
 .reveal section img.noborder { border: 0; box-shadow: none; background: transparent; }
 .clear { clear: both }
 
-strong { color: #22AAFF;}
+strong { color: #000033;}
 .reveal blockquote { background: #F2F2F2 }
 
+.reveal .slides { top: 40%; }
 .reveal .slides section { padding: 0;}
 .reveal .slides section .text-left { text-align: left }
 .text-center { text-align: center }
@@ -75,5 +76,5 @@ p.nota {
 .reveal section pre code { box-shadow: 0 0 6px #000010;} 
 
 .intro h2 {
-  
+  margin-bottom: 10px;  
 }
