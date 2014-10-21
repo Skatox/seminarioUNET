@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Seminario | UNET</title>
+
+		<meta name="description" content="Láminas de la clase de seminario">
+		<meta name="author" content="Miguel Useche">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/unet.css" id="theme-unet">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="slide intro">
+					<div class="unet">
+						<div class="left">
+							<img class="noborder" src="img/UNET.png" alt="UNET Logo">
+						</div>
+						<div class="left">
+							<p id="definition-header">
+								Universidad Nacional Experimental Del Táchira<br />
+								Decanato De Docencia<br />
+								Dpto. Ingeniería Informática
+							</p>
+						</div>
+					</div>
+
+					<h2 class="clear">Herramientas de apoyo al <br>desarrollo de software</h2>
+
+					<div class="text-center">
+						<p>
+							<a href="http://skatox.com/" target="_blank">Prof. Miguel Useche</a> <br>
+							<a href="mailto:miguel.useche@unet.edu.ve" target="_blank">miguel.useche@unet.edu.ve</a> - 
+							<a href="http://twitter.com/skatox" target="_blank">@skatox</a>
+						</p>
+					</div>
+				</section>
+
+				<section id="conocimientos-previos">
+					<h2>Conocimientos previos</h2>
+					<ul>
+						<li>Conocimientos básicos de programación.</li>
+						<li>Conocer el proceso de desarrollo de software.</li>
+					</ul>
+				</section>
+
+				<section id="objetivo-clase">
+					<h2>Objetivo de la clase</h2>
+					<ul>
+						<li class="fragment">
+							Aprender a dividir el desarrollo de un proyecto en tareas menores.
+						</li>
+						<li class="fragment">
+							Conocer el uso de un <em>Issue Tracking System</em> (seguimiento
+							de incidencias).
+							<ul>
+								<li>Conceptos básicos.</li>
+								<li>Vida de un issue.</li>
+								<li>El proceso de cierre de un issue.</li>
+							</ul>
+						</li>
+						<li class="fragment">Manejo de <em>Wikis</em> para la documentación.</li>
+					</ul>
+				</section>
+
+				<section id="introduccion">
+					<h2>Introducción</h2>
+					<blockquote>
+						Las metodologías ágiles, se basan en la premisa que el desarrollo 
+						de software es un dominio <strong>complejo</strong>, sin orden a
+						diferencia de otros sistemas de producción como la de automóviles.
+						<cite>Understanding Software Agility (2011).</cite>
+					</blockquote>
+				</section>
+
+				<section id="introduccion-2">
+					<h2>Introducción</h2>
+					<blockquote class="fragment">
+						διαίρει καὶ βασίλευε (Griego)
+					</blockquote>
+					<blockquote class="fragment">
+						Divide et impera (Latín)
+					</blockquote>
+					<blockquote class="fragment">
+						Divide y vencerás (Español)
+					</blockquote>
+
+					<aside class="notes">
+						Frase atribuida a Filipo II el padre de Alejandro Magno. Se
+						usa para decir que se debe resolver un problema grande en varios
+						pequeños y realizar el proceso recursivamente hasta resolver el
+						problema.
+					</aside>
+				</section>
+
+				<section id="actividades-1">
+					<h2>Introducción</h2>
+					<ul>
+						<li>
+							Las soluciones informáticas son sistemáticas y suelen estar 
+							compuestas de muchos elementos, que al observarlos desde el
+							punto de vista general pueden abrumar, intimidar o es díficil
+							englobar su totalidad. 
+						</li>
+						<li class="fragment">
+							La gerencia de proyectos <em>(project management)</em> ayuda
+							en esta tarea, al separar el proyecto en tareas de distintos
+							niveles hasta facilitar su compresión.
+						</li>
+						<li class="fragment">
+							Comprender bien la solución, permite obtener mayor calidad,
+							eficiencia, efectividad, menores costos y tiempo de desarrollo.
+						</li>
+					</ul>
+				</section>
+
+				<section id="actividades-2">
+					<h2>Introducción</h2>
+					<ul>
+						<li>
+							La <strong>gerencia de proyectos</strong> es una disciplina
+							muy amplia como para estudiarla en esta materia. 
+						</li>
+						<li>
+							Nos enfocaremos en el manejo de actividades desde un punto 
+							de vista muy superficial e informático.
+						</li>
+					</ul>
+				</section>
+
+				<section id="version">
+					<h2>Conceptos básicos</h2>
+					<h3>Versión de un software</h3>
+					<ul>
+						<li>
+							Es la identificación mediante un número o un nombre, un determinado
+							estado de una aplicación.
+						</li>
+						<li>
+							Generalmente se usa una notación de 2 números separados por punto,
+							el primero indica cambios mayores y el segundo menores.
+						</li>
+					</ul>
+					<aside class="notes">
+						Existen nombres genéricos para identificar una versión, como Beta, Alpha,
+						Release Candidate, Nightly, Git version.
+					</aside>
+				</section>
+
+				<section id="componente">
+					<h2>Conceptos básicos</h2>
+					<h3>Componente</h3>
+					<ul>
+						<li>
+							Son los elementos que conforman un software y pueden ser
+							implementados independientemente sin modificaciones en
+							otros proyectos.
+						</li>
+						<li>
+							Algunos componentes son: servidor de base de datos,
+							servidor web, backend, frontend, archivos de configuración,
+							sistemas externos (control de versiones), entre otros.
+						</li>
+					</ul>
+				</section>
+
+				<section id="milestones">
+					<h2>Conceptos básicos</h2>
+					<h3>Milestone (Hito o Meta)</h3>
+					<ul>
+						<li>
+							Es un evento que recibe gran atención. Suele indicar la culminación
+							de una fase o un conjunto de actividades.
+						</li>
+						<li class="fragment">
+							Indican la cantidad de trabajo realizado.
+						</li>
+						<li class="fragment">
+							Están compuesta por fechas de inicio y culminación.
+						</li>
+						<li class="fragment">
+							Pueden tener dependencias de otros <em>milestones</em>.
+						</li>
+						<li class="fragment">
+							Permiten a los <em>project managers</em> observar el avance del proyecto.
+						</li>
+					</ul>
+				</section>
+
+				<section id="actividad-1">
+					<h2>Conceptos básicos</h2>
+					<h3>Actividad</h3>
+					<ul>
+						<li>Son las tareas necesarias para cumplir un fin.</li>
+						<li>Las tareas deben realizarse en un orden.</li>
+						<li>Pueden ser dependientes de otras actividads y posee un orden.</li>
+						<li>
+							Una actividad debe ser lo suficientemente sencilla para
+						 	ser comprendidad por cualquier miembro del proyecto.
+						 </li>
+					</ul>
+					<aside class="notes">
+						Una actividad no es un paso del proceso a desarrollar.
+					</aside>
+				</section>
+
+				<section id="issue">
+					<h2>Conceptos básicos</h2>
+					<h3>Issues</h3>
+					<ul>
+						<li>Es una unidad de trabajo para lograr una "mejora" en el sistema.</li>
+						<li class="fragment">
+							Representa una actividad cuando se esta desarrollando el software.
+						</li>
+						<li class="fragment">
+							También puede ser la corrección de un bug, crear una nueva funcionalidad,
+							documentación faltante, etc.
+						</li>
+						<li class="fragment">No debe confundirse con el término "problema" del inglés.</li>
+						<li class="fragment">
+							Suelen estar relacionados a un <strong>componente</strong>.</li>
+						</li>
+						<li class="fragment">Poseen <strong>niveles de prioridad</strong>.</li>
+					</ul>
+					<aside class="notes">
+						Se dice mejora porque muchas metolodogias asumen como falla
+						o problema que no exista una funcionalidad.
+					</aside>
+				</section>
+
+				<section id="estados-de-issue">
+					<h2>Conceptos básicos</h2>
+					<h3>Estados de Issues</h3>
+					<ul>
+						<li>
+							Depende de la implementación y de la metodología usada por la organización.
+						</li>
+						<li>
+							Los estados suelen ser:
+							<ul>
+								<li><strong>Abierto</strong></li>
+								<li><strong>Verificado</strong></li>
+								<li><strong>Propuesta</strong></li>
+								<li><strong>En espera</strong></li>
+								<li><strong>Re-abierto</strong>-abierto</li>
+								<li><strong>Finalizado</strong></li>
+								<li><strong>Cerrado</strong></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				
+				<section id="issue-tracker-system">
+					<h2>Issue/Bug Tracker Systems</h2>
+					<ul>
+						<li>
+							Es un paquete que permite administrar una lista de issues, milestones, etc.
+						</li>
+						<li class="fragment">
+							Algunos son públicos para permitir reportes de sus usuarios.
+						</li>
+						<li class="fragment">
+							Suelen estar integrados con herramientas de control de versioens.
+						</li>
+						<li  class="fragment">
+							Permiten llevar el control de desarrollo de software, solución a problemas,
+							avances del proyecto, predecir tiempo de desarrollo.
+						</li>
+						<li  class="fragment">
+							Sirve como sustento e historial del trabajo realizado.
+						</li>
+					</ul>
+				</section>
+
+				<section id="issue-trackers-mas-usados">
+					<h2>Issue/Bug Tracker Systems mas utilizados</h2>
+					<img src="img/issues/issuesTrackers.png" alt="Issue trackers mas utilizados">
+					<p>Gitlab, Redmine, Bugzilla, Jira, Mantis, Rational...</p>
+				</section>
+
+				<section id="enlaces">
+					<h2>Enlaces recomendados</h2>
+					<ul>
+						<li>
+							<a href="http://adamaconsulting.blogspot.com/2008/05/sistemas-de-control-de-versiones.html">
+								Sistema de control de versiones
+							</a>
+						</li>
+						<li>
+							<a href="https://try.github.io/levels/1/challenges/1">Tutorial para aprender GIT</a>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>¿Preguntas?</h1>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 960,
+    			height: 500,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

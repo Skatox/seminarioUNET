@@ -21,7 +21,8 @@ body {
 .clear { clear: both }
 
 strong { color: #000033;}
-.reveal blockquote { background: #F2F2F2 }
+.reveal blockquote { background: #F2F2F2; padding: 20px; }
+.reveal blockquote cite { display: block; text-align: right; margin-top: 20px; }
 
 .reveal .slides { top: 40%; }
 .reveal .slides section { padding: 0;}
