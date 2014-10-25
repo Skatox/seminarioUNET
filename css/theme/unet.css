@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-
 body {
   background: #aaa;
   background: -moz-radial-gradient(center, circle cover, #FFF 0%, #ABB9E4 100%);
@@ -64,8 +62,9 @@ h1 {
   margin: 10px; 
 }
 
-p.nota {
-  color: #933;
+p.note {
+  background: #933;
+  color: #EEE;
   font-style: italic;
   font-size: 0.5em;
   padding: 20px;

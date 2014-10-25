@@ -78,7 +78,7 @@
 
 				<section>
 					<h2>Ingeniería de Software</h2>
-					<img src="img/softengineer/software-engineer.jpg" height="333" width="498">
+					<img src="img/softengineer/software-engineer.jpg" alt="Ingeniera de Software">
 					<p>
 						Desarrollemos un concepto
 					</p>
@@ -164,7 +164,7 @@
 				<section>
 					<section>
 						<h2>¿Por qué aplicar <br> Ing. Software?</h2>
-						<img  class="fragment" src="img/softengineer/whySoftwareEngineering.jpg">
+						<img  class="fragment" src="img/softengineer/whySoftwareEngineering.jpg" alt="Falla de ingenieria">
 					</section>
 					<section>
 						<h2>¿Por qué aplicar <br> Ing. Software?</h2>
@@ -186,7 +186,7 @@
 
 				<section>
 					<h2>Ciclo de desarrollo de software</h2>
-					<img src="img/softengineer/cicloSoftware.png" style="width: 70%">
+					<img src="img/softengineer/cicloSoftware.png" style="width: 70%" alt="Ciclo del software">
 					<p class="note">Fuente: 
 						<a href="http://sitcomsoluciones.com/" target="_blank">SITCOM Soluciones</a>
 					</p>	
@@ -243,7 +243,7 @@
 
 					<section>
 						<h3>Metodologías  <br>tradicionales vs ágiles</h3>
-						<img src="img/softengineer/tradicionalVsAgile.jpg">
+						<img src="img/softengineer/tradicionalVsAgile.jpg" alt="Tradicional VS Agil">
 					</section>
 					<section>
 						<h3>Metodologías  <br>tradicionales vs ágiles</h3>
@@ -374,7 +374,7 @@
 					<section>
 						<h2>Herramientas de SCRUM</h2>
 						<h3>Product Backlog</h3>
-						<img src="img/softengineer/whiteboard.jpg" >
+						<img src="img/softengineer/whiteboard.jpg" alt="Whiteboard">
 						<aside class="notes">
 							Contiene las historias de usuario, funcionalidades, prioridades y solo
 							puede ser actualizado por el product owner.
@@ -384,7 +384,7 @@
 					<section>
 						<h2>Herramientas de SCRUM</h2>
 						<h3>Sprint Backlog</h3>
-						<img src="img/softengineer/SprintBacklog.jpg" >
+						<img src="img/softengineer/SprintBacklog.jpg" alt="backlog" >
 						<aside class="notes">
 							Es la lista de trabajo que el equipo de desarrollo debe realizar 
 							para la próxima entrega. No se asignan sino cada quien la toma 
@@ -393,7 +393,7 @@
 					</section>
 					<section>
 						<h2>SCRUM</h2>
-						<img src="img/softengineer/scrum.png" >
+						<img src="img/softengineer/scrum.png" alt="scrum">
 						<p>Resumen del proceso de desarrollo con SCRUM</p>
 					</section>
 				</section>
@@ -454,45 +454,102 @@
 
 					<section>
 						<h2>XP Extreme Programming</h2>
-						<img src="img/softengineer/cicloXP.png" style="width: 50%">
+						<img src="img/softengineer/cicloXP.png" style="width: 50%" alt="ciclo de XP">
 						<p>Actividades de la XP</p>
 					</section>
 				</section>
 	
 				<section>
-					<section>
+					<section id="fdd">
 						<h2>Feature Driven Development (FDD)</h2>
 						<ul>
-							<li>Metodología basada en procesos iterativos.</li>
+							<li>Creada en 1997 por  Jeff De Luca basada en procesos iterativos.</li>
+							<li class="fragment">
+								Esta compuesta por 5 fases:
+								<ul>
+									<li>
+										Las primeras 2 se encargan de dar forma a las actividades 
+										y el <strong>prototipo inicial</strong>.
+									</li> 
+									<li class="fragment">
+										Las 3 finales son iteraciones que se repiten por cada <strong>funcionalidad</strong>
+									</li>
+								</ul>
+							</li>
 						</ul>
 					</section>
 
-					<section>
-						<div class="half left">
-							<img src="img/softengineer/fdd.png">
-						</div>
-						<div class="half left">
-							<h2>Feature Driven Development (FDD)</h2>
-						</div>
+					<section id="fases-de-fdd">
+						<h2>Fases de FDD</h2>
+						<ol>
+							<li>Desarrollar un modelo general.</li>
+							<li>Construir una lista de características/funcionalidades.</li>
+							<li>Planificar por característica.</li>
+							<li>Diseñar y construir por característica.</li>
+							<li>Repetir el paso 4 hasta no existir mas características.</li>
+						</ol>
+
+						<aside class="notes">
+							En la planificación por característica, se indica el orden de las tareas.
+
+						</aside>
+					</section>
+
+					<section id="fases-de-fdd-grafico">
+						<h2>Fases de FDD</h2>
+						<img src="img/softengineer/fdd.png" class="half" alt="ciclo de FDD">
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section id="tdd">
 						<h2>Test Driven Development (TDD)</h2>
 						<ul>
-							<li>Metodología basada en procesos iterativos.</li>
+							<li>Metodología basada en cortos procesos iterativos.</li>
+							<li>
+								El programador escribe primero la prueba (que falla inicialmente)
+								de una funcionalidad a crear, crea el mínimo código para pasar esa prueba
+								y luego mejora el código a un estándar aceptable.
+							</li>
 						</ul>
 					</section>
 
-					<section>
-						<div class="half left">
-							<img src="img/softengineer/tdd.jpg">
-						</div>
-						<div class="half left">
-							<h2>Test Driven Development (TDD)</h2>
-						</div>
+					<section id="fases-de-tdd">
+						<h2>Ciclo de TDD</h2>
+						<ol>
+							<li>Añadir una prueba.</li>
+							<li>Ejecutar todas las pruebas y ver si alguna falla.</li>
+							<li>Escribir código que permita pasar la prueba.</li>
+							<li>Ejecutar pruebas.</li>
+							<li>Optimizar el código.</li>
+						</ol>
+
+						<aside class="notes">
+							Las pruebas evitan regresiones, la optimizaciones puede
+							implicar mover el código a una mejor manera, el codigo que
+							modifica no altera al resto gracias a las pruebas.
+						</aside>
 					</section>
+					<section id="fases-de-tdd-grafico">
+							<h2>Test Driven Development (TDD)</h2>
+							<img src="img/softengineer/tdd.jpg" alt="Ciclo de TDD">
+					</section>
+				</section>
+
+				<section id="referencias">
+					<h2>Sitios de interés</h2>
+					<ul>
+						<li>
+							<a href="http://en.wikipedia.org/wiki/Software_development_process" target="_blank">
+								Entrada en Wikipedia en inglés sobre el desarrollo de software
+							</a>
+						</li>
+						<li>
+							<a href="http://guide.agilealliance.org/" target="_blank">
+								Guía sobre las distintas metodologías ágiles
+							</a>
+						</li>
+					</ul>
 				</section>
 
 				<section>
