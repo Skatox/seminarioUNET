@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Seminario | UNET</title>
+
+		<meta name="description" content="Láminas de la clase de seminario">
+		<meta name="author" content="Miguel Useche">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/unet.css" id="theme-unet">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="slide intro">
+					<div class="unet">
+						<div class="left">
+							<img class="noborder" src="img/UNET.png" alt="UNET Logo">
+						</div>
+						<div class="left">
+							<p id="definition-header">
+								Universidad Nacional Experimental Del Táchira<br />
+								Decanato De Docencia<br />
+								Dpto. Ingeniería Informática
+							</p>
+						</div>
+					</div>
+
+					<h1>NoSQL</h1>
+
+					<div class="text-center">
+						<p>
+							<a href="http://skatox.com/" target="_blank">Prof. Miguel Useche</a> <br>
+							<a href="mailto:miguel.useche@unet.edu.ve" target="_blank">miguel.useche@unet.edu.ve</a> - 
+							<a href="http://twitter.com/skatox" target="_blank">@skatox</a>
+						</p>
+					</div>
+				</section>
+
+				<section id="conocimientos-previos">
+					<h2>Conocimientos previos</h2>
+					<ul>
+						<li>Algoritmos de indexación.</li>
+						<li>Conceptos básicos de base de datos.</li>
+						<li>Conocimientos básicos de sistemas de archivos.</li>
+						<li>Funcionamiento de sistemas distribuidos.</li>
+					</ul>
+				</section>
+
+				<section id="objetivo-clase">
+					<h2>Objetivo de la clase</h2>
+					<ul>
+						<li class="fragment">Introducción a los distintos tipos de B.B.D.D. NoSQL.</li>
+						<li class="fragment">Situaciones donde se debe utilizar B.B.D.D. NoSQL.</li>
+						<li class="fragment">Ventajas y desventajas.</li>
+						<li class="fragment">Consultas básicas con MongoDB.</li>
+					</ul>
+				</section>
+
+				<section id="introduccion">
+					<h2>Introducción</h2>
+					<h3>Sistemas gestores de BBDD</h3>
+					<p class="text-left">
+						Ya las BBDD han evolucionado en:
+					</p>
+					<ul>
+						<li><strong>RDBMS:</strong> Oracle, Postgres, MySQL, SQL Server.</li>
+						<li><strong>OLAP:</strong> Hadoop, Vertica, Netezza.</li>
+						<li><strong>NoSQL:</strong> Cassandra, CouchDB, MongoDB.</li>
+					</ul>
+					<aside class="notes">
+						Proveen un mecanismo para almacenar y obtener data.
+						RBDM ofrece mas caracteristicas a menor rendimiento mientras que NoSQL 
+						lo opuesto.
+					</aside>
+				</section>
+
+				<section id="introduccion-2">
+					<h2>Introducción</h2>
+					<h3>Evolucion BBDD</h3>
+					<ul>
+						<li class="fragment">Aparecieron en los años 70.</li>
+						<li class="fragment">
+							Se crearon estándares para definir como comunicarse (DDL, SQL).
+						</li>
+						<li class="fragment">
+							Se convirtieron en la solución para la gestión de datos.
+						</li>
+						<li class="fragment">
+							Con la aparición de la web, grandes centros de datos tuvieron
+							problemas con el rendimiento.
+						</li>
+						<li class="fragment">
+							La solución a ello fueron las base de datos <strong>NoSQL</strong>.
+						</li>
+					</ul>
+				</section>
+
+				<section id="objetivos-nosql">
+					<h2>Objetivos de la B.D. NoSQL</h2>
+					<ul>
+						<li>
+							El objetivo principal es proveer:
+							<ul>
+								<li>Escabilidad.</li>
+								<li>Rendimiento.</li>
+								<li>Alta disponibilidad.</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Preguntar cada concepto
+					</aside>
+				</section>
+
+				<section id="que-es-nosql">
+					<h2>¿Qué es NoSQL?</h2>
+					<h3 class="fragment">Not Only SQL</h3>
+					<div class="fragment">
+						<ul>
+							<li >
+								NoSQL agrupa una variedad de diferentes tecnologías de B.B.D.D., desarrolladas
+								como respuesta ante el gran volumen de datos almacenados sobre usuarios, objetos
+								y producto, la frecuencia con la que la data es accedida, rendimiento y necesidades
+								de procesamiento.
+							</li>
+						</ul>	
+
+						<p><br><strong>Fuente:</strong> MongoDB Inc. (2014)</p>
+					</div>
+				</section>
+				<section id="que-es-nosql-2">
+					<h2>¿Qué es NoSQL?</h2>
+					<h3>Not Only SQL</h3>
+					<ul>
+						<li>
+							Por otra parte, las base de datos relaciones no fueron diseñadas para soportar
+							la escabilidad y agilidad que enfrentan aplicaciones modernas, y no fueron 
+							construidas para tomar ventaja de lo barato del almacenamiento y poder de 
+							procesamiento disponible en la actualidad.
+						</li>
+					</ul>
+					<p><br><strong>Fuente:</strong> MongoDB Inc. (2014)</p>
+				</section>
+				<section id="que-es-nosql-3">
+					<h2>¿Qué es NoSQL?</h2>
+					<h3>Not Only SQL</h3>
+					<ul>
+						<li>Es una base de datos no relacional que escala mejor.</li>
+						<li>No utiliza SQL para consultar los datos.</li>
+						<li>No tiene un esquema definido.</li>
+						<li>Son muy especializadas y tienen limitaciones</li>
+					</ul>
+					<p>
+						<br><strong>Fuente:</strong> 
+						<a href="http://www.guru99.com/" target="_blank">Guru 99</a>. (2014)
+					</p>
+				</section>
+				<section id="que-no-tiene-nosql">
+					<h2>NoSQL</h2>
+					<div class="half left">
+						<h3>Ofrece</h3>
+						<ul>
+							<li>Lenguaje de consultas distinto a SQL.</li>
+							<li>Rápido rendimiento.</li>
+							<li>Escabilidad horizontal.</li>
+						</ul>
+					</div>
+					<div class="half left fragment">
+						<h3>No ofrece</h3>
+						<ul>
+							<li>No tiene soporte para <em>Joins</em>.</li>
+							<li>No posee soporte para transacciones complejas.</li>
+							<li>No soporta <em>constrains</em>.</li>
+							<li>No garantiza ACID (Atomicidad, Consistencia, Isolación, Durabilidad).</li>
+						</ul>
+					</div>
+				</section>	
+				<section id="categorias-nosql">
+					<h2>Categorías de NoSQL</h2>
+					<ul>
+						<li>Key-value.</li>
+						<li>Orientadas a columnas.</li>
+						<li>Orientadas a documentos.</li>
+						<li>Grafos</li>
+					</ul>
+				</section>	
+				<section id="key-value">
+					<h2>Key-value (Clave-valor)</h2>
+					<div class="half left">
+						<ul>
+							<li>
+								Basadas en la publicación 
+								<a href="http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo de Amazon</a>.
+							</li>
+							<li>El modelo de datos es una colección de pares de Clave/valor.</li>
+							<li>Ejemplo: Riak, Voldemort, Tokyo.</li>
+						</ul>
+					</div>
+					<div class="half left">
+						<img src="img/nosql/keyvalue.png"  alt="Clave valor">						
+					</div>
+				</section>		
+				<section id="orientadas-columnas">
+					<h2>Orientadas a columnas</h2>
+					<div class="half left">
+						<ul>
+							<li>
+								Basadas en la publicación de 
+								<a href="http://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf">Tablas Grandes de Google</a>.
+							</li>
+							<li>El modelo de datos es una gran tabla con muchas columnas.</li>
+							<li>Ejemplo: HBase, HyperTable, Cassandra.</li>
+						</ul>
+					</div>
+					<div class="half left">
+						<img src="img/nosql/bigtable.png"  alt="BigTable">						
+					</div>
+					<aside class="notes">
+						Cada fila tiene su propio esquema
+					</aside>
+				</section>
+				<section id="orientadas-documentos">
+					<h3>Orientadas a <br>documentos</h3>
+					<ul>
+						<li>Inspiradas en Lotus Notes.</li>
+						<li>El modelo de datos es una colección de pares de Clave/valor.</li>
+						<li>La clave es generada en base al contenido del documento.</li>
+						<li>Ejemplo: CouchDB, MongoDB.</li>
+					</ul>
+					<img src="img/nosql/document.png"  alt="Documentos">						
+				</section>
+				<section id="orientadas-grafo">
+					<h2>De grafos</h2>
+					<ul>
+						<li>Inspiradas en la teoría de grafos y Euler.</li>
+						<li>
+							El modelo de datos son nodos, relaciones, clave 
+							y valor según las 2 anteriores.
+						</li>
+						<li>Ejemplo: AllegroGraph, Sones, Neo4j.</li>
+					</ul>
+					<img src="img/nosql/graph.png"  alt="Grafos">						
+				</section>	
+				<section id="orientadas-grafo-ejemplo">
+					<h3>Ejemplo de <br>BD de grafos</h3>
+					<a href="img/nosql/full_tickit_graph_graph.png" target="_blank">
+						<img src="img/nosql/full_tickit_graph_graph.png" class="twothird"  alt="Grafos">	
+					</a>
+					<p>Fuente: <a href="http://sparqlcity.com/" target="_blank">SPARQL City</a> (2014)</p>
+				</section>		
+				<section id="complejidad-escabilidad">
+					<h3>Complejidad vs Escabilidad</h3>
+					<img src="img/nosql/axis.png" alt="Complejidad vs Escabilidad">	
+					<p>Fuente: Gigaom Inc (2013)</p>
+				</section>	
+
+				<section id="implementaciones-populares">
+					<h3>Implementaciones populares</h3>
+					<img src="img/nosql/nosql-databases.jpg" alt="Grafos">	
+				</section>	
+
+				<section id="beneficios">
+					<h2>Beneficios</h2>
+					<ul>
+						<li>
+							Grandes volúmenes de datos estructurdos, semi-estructuras y 
+							datos no estructurados. (esquemas dinámicos)
+						</li>
+						<li class="fragment">
+							Fases de desarrollo ágiles, iteraciones rápidas y soporte
+							para cambios en el código.
+						</li>
+						<li class="fragment">
+							Programación orientada a objetos que es fácil de usar y flexible.
+						</li>
+						<li class="fragment">Arquitectura escalable, eficiente, distribuida.</li>
+					</ul>
+				</section>
+
+				<section id="desventajas">
+					<h2>Desventajas</h2>
+					<ul>
+						<li>
+							Están diseñadas principalmente para el almacenamiento y poca
+							funcionalidad mas allá de esto.
+						</li>
+						<li class="fragment">Falta de estandarización.</li>
+						<li class="fragment"> Se sacrifica consistencia por encima del rendimiento.</li>
+						<li class="fragment">Falta de madurez.</li>
+					</ul>
+					<aside class="notes">
+						No se aconseja par instituciones financieras por la inconsistencia.
+					</aside>
+				</section>
+
+				<section id="cuando-usar-nosql">
+					<h2>¿Cuándo usar NoSQL?</h2>
+					<ul>
+						<li>
+							La necesidad de almacenar y obtener grandes cantidades de datos
+							es imporante.
+						</li>
+						<li>La data no es estructurada y cambia en el tiempo.</li>
+						<li class="fragment">No es importante almacenar la relación entre elementos.</li>
+						<li class="fragment">Se necesitan desarrollar prototipos.</li>
+						<li class="fragment">
+							Se debe lidiar con lista de elementos que crecen: posts de 
+							Twitter, blogs, logs.
+						</li>
+						<li class="fragment">
+							La lógica de validación no es necesario implementarla en la BD.
+						</li>
+					</ul>
+					<aside class="notes">
+						No se aconseja par instituciones financieras por la inconsistencia.
+					</aside>
+				</section>
+
+				<section id="cuando-no-usar-nosql">
+					<h2>¿Cuándo no usar NoSQL?</h2>
+					<ul>
+						<li>Se necesitan aplicar transacciones complejas.</li>
+						<li class="fragment">Los <em>Joins</em> se deben manejar en la BD.</li>
+						<li class="fragment">Las validaciones se deben hacer por la BD.</li>
+						<li class="fragment">Se requiere alta consistencia.</li>
+					</ul>
+					<aside class="notes">
+						Transacciones como salarios, muchos sistemas que escrbien en la misma
+						DB pueden dañar si no esta validado.
+					</aside>
+				</section>
+
+				<section id="enlaces">
+					<h2>Enlaces recomendados</h2>
+					<ul>
+						<li>
+							<a href="http://www.mongodb.com/nosql-explained" target="_blank">
+								Información resumida sobre NoSQL (MongoDB)
+							</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/watch?v=rRoy6I4gKWU" target="_blank">
+								Video del Google I/O 2012 sobre SQL vs NoSQL
+							</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/watch?v=qUV2j3XBRHc" target="_blank">
+								Video en inglés sobre NoSQL
+							</a>
+						</li>
+						<li>
+							<a href="http://docs.mongodb.org/manual/core/crud-introduction/" target="_blank">
+								Guía oficial de uso de MongoDB
+							</a>
+						</li>
+					</ul>
+					<aside class="notes">
+						Enlaces a papers
+					</aside>
+				</section>
+
+				<section>
+					<h1>¿Preguntas?</h1>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 960,
+    			height: 500,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
