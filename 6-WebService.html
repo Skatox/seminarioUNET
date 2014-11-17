@@ -320,10 +320,143 @@
 					</p>
 				</section>
 
+				<section id="rest-title">
+					<h1>REST</h1>
+					<h2>Representational <br>state transfer</h2>
+					<aside class="notes">
+						Hablar sobre la complejidad de SOAP
+					</aside>
+				</section>
+
+				<section id="rest">
+					<h2>REST</h2>
+					<ul>
+						<li>Desarrollado por la W3C Technical Architecture Group (TAG)</li>
+						<li class="fragment">Utiliza la arquitectura Cliente-Servidor.</li>
+						<li class="fragment">Se apoya totalmente en el protocolo HTTP.</li>
+						<li class="fragment">Al igual que HTTP no posee estado y permite usar caché.</li>
+					</ul>
+					<aside class="notes">
+						Fue desarrollado en pararelo con el protocolo HTTP 1.1
+					</aside>
+				</section>
+
+				<section id="rest-propiedades">
+					<h2>Propiedades de  REST</h2>
+					<ul>
+						<li>Rendimiento</li>
+						<li>Escalabilidad</li>
+						<li>Simplicidad de interfaces</li>
+						<li>Portabilidad y Confiabilidad</li>
+					</ul>
+
+					<aside class="notes">
+						Rendimiento al optimizar la red, reduce la complejidad, simplicidad
+						de interfaces al usar HTTP, 
+					</aside>
+				</section>
+
+				<section id="restful">
+					<h2>RESTful</h2>
+					<h3>(Servicios web con REST)</h3>
+					<ul>
+						<li>Utiliza una URL base: <strong>http://midominio.com/api/</strong></li>
+						<li>
+							Un <em>Internet media type</em> para
+							la transmisión de la data. (Generalmente JSON)
+						</li>
+						<li>
+							Un método estándar de HTTP (GET, POST, PUT, DELETE)
+						</li>
+					</ul>
+				</section>
+
+				<section id="ejemplo">
+					<h3>Ejemplo de REST</h3>
+					<table class="txt-medium">
+						<thead>
+							<tr>
+								<th>Recurso</th>
+								<th>GET</th>
+								<th>POST</th>
+								<th>PUT</th>
+								<th>DELETE</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									Colección <br>
+									<strong>http://sitio/recurso</strong>
+								</td>
+								<td>Lista todos los elementos</td>
+								<td>Crea una nueva entrada</td>
+								<td>Reemplaza toda la colección</td>
+								<td>Elimina toda una colección</td>
+							</tr>
+							<tr>
+								<td>
+									Elemento <br>
+									<strong>http://sitio/recurso/123</strong>
+								</td>
+								<td>Obtiene la representación de un elemento</td>
+								<td>
+									Crea una nueva entrada con el identificador dado
+									(rara vez se usa)
+								</td>
+								<td>Reemplaza un elemento de la colección, si no existe la crea.</td>
+								<td>Elimina un elemento de la colección</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section id="ejemplo2-rest">
+					<h2>Ejemplo de REST</h2>
+					<p>Ejemplo para obtener datos de una cuenta bancaria</p>
+					<pre>
+						<code class="http">//Obtiene todas las cuentas del sistema
+GET http://mibanco.com/api/cuentas/
+
+//Inserta una cuenta						
+POST http://mibanco.com/api/cuentas/
+
+//Edita una cuenta
+PUT http://mibanco.com/api/cuentas/123
+
+//Elimina una cuenta
+DELETE http://mibanco.com/api/cuentas/123</code>
+					</pre>
+				</section>
+
 				<section id="aplicacion-de-web-services">
 					<h2>Aplicación de servicio web</h2>
 					<img src="img/webservices/zapier.png" alt="Aplicación del servicio web">
+					<p>Mediante la conexión de webservices puedes crear aplicaciones</p>
 				</section>
+
+				<section id="herramientas-rest">
+					<h2>REST</h2>
+					<h3>Herramientas para <br> hacer peticiones</h3>
+					<p>
+						Existen herramientas que se pueden agregar a los navegadores
+						para realizar peticiones HTTP a servicios y leer la respuesta.
+					</p>
+
+					<ul>
+						<li>
+							<a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">
+								RESTClient (para Firefox)
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=es">
+								Postman (para Chrome)
+							</a>
+						</li>
+					</ul>
+				</section>
+	
 
 				<section id="enlaces">
 					<h2>Enlaces recomendados</h2>

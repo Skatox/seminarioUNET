@@ -26,8 +26,8 @@ strong { color: #000033;}
 .reveal .slides section { padding: 0;}
 .reveal .slides section .text-left { text-align: left }
 .text-center { text-align: center }
-.reveal section .smaller { font-size: 28px}
 .reveal section { padding-bottom: 10px; }
+.reveal section .txt-medium { font-size: 23px }
 .reveal section .smaller { font-size: 15px }
 .reveal section .center { text-align: center }
 .reveal section h2, .reveal section h3 { 
@@ -78,3 +78,21 @@ p.note {
 .intro h2 {
   margin-bottom: 10px;  
 }
+
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+.reveal table tr:last-child td {
+  border-bottom: none; }
