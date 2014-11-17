@@ -429,10 +429,98 @@ DELETE http://mibanco.com/api/cuentas/123</code>
 					</pre>
 				</section>
 
+				<section id="json">
+					<h2>JSON</h2>
+					<h3>Javascript object notation</h3>
+					<ul>
+						<li>
+							Es un estándar (ECMA-404) abierto para el intercambio de datos.
+						</li>
+						<li>Es fácil de leer y escribir por las personas.</li>
+						<li>Fácil para las máquinas para interpretar y generar.</li>
+						<li>Formado por pares de atributos y valores.</li>
+						<li>
+							También es comúnmente utilizado para la definición de datos
+							en base de datos NOSQL de documentos.
+						</li>
+					</ul>
+				</section>
+
+				<section id="json-ejemplo">
+					<h2>JSON</h2>
+					<p class="text-left">Ejemplo de datos de una persona en formato JSON.</p>
+					<pre>
+						<code class="javascript">{
+    'nombre':"María",
+    'apellidos':"Perez Zambrano",
+    'edad':28,
+    'direccion': { //El valor es otro objeto JSON
+        'calle': 'Calle #2, Av #3',
+        'ciudad': 'Rubio',
+        'estado': 'Venezuela'
+    },
+    'telefonos': [0424123456, 04258675309] //Arreglo
+}</code>
+					</pre>
+				</section>
+
+				<section id="slim">
+					<h2>Implementación con <br>Slim Framework</h2>
+					<pre>
+						<code>require 'Slim/Slim.php';
+
+\Slim\Slim::registerAutoloader();
+$app = new \Slim\Slim();
+
+$response = $app->response();
+$response['Content-Type'] = 'application/json';
+
+$app->get('/pagos', function() use($app)
+{
+    $objeto = array(
+        'id'=> '123',
+        'monto'=> '123.23',
+        'descripcion'=> 'Pago realizado para inscribirse'
+    );
+    echo json_encode($objeto);
+});
+$app->run();</code>
+					</pre>
+					<p>
+						<a href="http://www.slimframework.com/" target="_blank">
+							Slim Framework
+						</a> sirve para crear servicios web en PHP
+					</p>
+				</section>
+
+				<section id="express">
+					<h2>Implementación con <br>ExpressJS</h2>
+					<pre>
+						<code class="js">var users = require('../controllers/users');
+module.exports = function(app, passport) {
+    // Configura el API para usuarios
+    app.route('/api/user').get(users.getAll);
+    app.route('/api/user').post(users.create);
+    app.route('/api/user').put(users.update);
+    app.route('/api/user').delete(users.delete);
+
+    // Configura el parámetro de userId
+    app.param('/api/user/userId', users.user);
+};</code>
+					</pre>
+					<div>
+						En este caso, cada método de user, busca la data y devuelve el
+						objeto.
+					</div>
+				</section>
+
 				<section id="aplicacion-de-web-services">
 					<h2>Aplicación de servicio web</h2>
 					<img src="img/webservices/zapier.png" alt="Aplicación del servicio web">
-					<p>Mediante la conexión de webservices puedes crear aplicaciones</p>
+					<p>
+						Mediante la conexión de <em>WS</em> puedes crear aplicaciones
+						en menos tiempo, gracias al intercambio de data.
+					</p>
 				</section>
 
 				<section id="herramientas-rest">
@@ -457,40 +545,40 @@ DELETE http://mibanco.com/api/cuentas/123</code>
 					</ul>
 				</section>
 	
-
 				<section id="enlaces">
 					<h2>Enlaces recomendados</h2>
 					<ul>
 						<li>
-							<a href="http://www.mongodb.com/nosql-explained" target="_blank">
-								Información resumida sobre NoSQL (MongoDB)
+							<a href="http://www.w3schools.com/webservices/ws_soap_intro.asp" target="_blank">
+								Introducción a SOAP por la W3C
 							</a>
 						</li>
 						<li>
-							<a href="https://www.youtube.com/watch?v=rRoy6I4gKWU" target="_blank">
-								Video del Google I/O 2012 sobre SQL vs NoSQL
+							<a href="http://stackoverflow.com/a/8983122/343452" target="_blank">
+								Comparación de SOAP y REST en StackOverflow
 							</a>
 						</li>
 						<li>
-							<a href="https://www.youtube.com/watch?v=qUV2j3XBRHc" target="_blank">
-								Video en inglés sobre NoSQL
+							<a href="http://www.json.org/json-es.html" target="_blank">
+								Sitio oficial en español sobre JSON
 							</a>
 						</li>
 						<li>
-							<a href="http://docs.mongodb.org/manual/core/crud-introduction/" target="_blank">
-								Guía oficial de uso de MongoDB
+							<a href="http://www.aljtmedia.com/blog/creating-a-restful-api-with-php-using-slim/">
+								Tutorial para crear un servicios web REST usando Slim Framework
+							</a>
+						</li>
+						<li>
+							<a href="http://scotch.io/tutorials/javascript/build-a-restful-api-using-node-and-express-4" target="_blank">
+								Tutorial para crear un servicio con REST usando Express
 							</a>
 						</li>
 					</ul>
-					<aside class="notes">
-						Enlaces a papers
-					</aside>
 				</section>
 
 				<section>
 					<h1>¿Preguntas?</h1>
 				</section>
-
 
 			</div>
 
