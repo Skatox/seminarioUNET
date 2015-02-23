@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Seminario | UNET</title>
+
+		<meta name="description" content="Láminas de la clase de seminario">
+		<meta name="author" content="Miguel Useche">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/unet.css" id="theme-unet">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="slide intro">
+					<div class="unet">
+						<div class="left">
+							<img class="noborder" src="img/UNET.png" alt="UNET Logo">
+						</div>
+						<div class="left">
+							<p id="definition-header">
+								Universidad Nacional Experimental Del Táchira<br />
+								Decanato De Docencia<br />
+								Dpto. Ingeniería Informática
+							</p>
+						</div>
+					</div>
+
+					<h1 class="clear">SQA</h1>
+
+					<div class="text-center">
+						<p>
+							<a href="http://skatox.com/" target="_blank">Prof. Miguel Useche</a> <br>
+							<a href="mailto:miguel.useche@unet.edu.ve" target="_blank">miguel.useche@unet.edu.ve</a> - 
+							<a href="http://twitter.com/skatox" target="_blank">@skatox</a>
+						</p>
+					</div>
+				</section>
+
+				<section id="conocimientos-previos">
+					<h2>Conocimientos previos</h2>
+					<ul>
+						<li>Proceso de desarrollo de software</li>
+						<li>Manejo de proyectos de software.</li>
+						<li>Esquema de lanzamientos de un producto.</li>
+					</ul>
+				</section>
+
+				<section id="objetivo-clase">
+					<h2>Objetivo de la clase</h2>
+					<ul>
+						<li class="fragment">Justificación de realizar el proceso de pruebas.</li>
+						<li class="fragment">Ejemplos de cuando no se realizan pruebas.</li>
+						<li class="fragment">Definiciones básicas.</li>
+						<li class="fragment">Descripción y clasificación de las Pruebas</li>
+						<li class="fragment">Explicación de las pruebas unitarias en Yii.</li>
+						<li class="fragment">Explicación de las pruebas funcionales en Yii.</li>
+					</ul>
+					<aside class="notes">
+						Se puede aplicar a otro framework de desarrollo.
+					</aside>
+				</section>
+
+				<section id="error">
+					<h2>¿Qué es un error?</h2>
+
+					<div class="half left">
+						<img src="img/qa/software-bug.jpg" alt="Bug de software">
+					</div>
+					<div class="half left">
+						<ul>
+							<li>Según la Real Academia Española: "Acción desacertada o equivocada."</li>
+							<li>En la informática se le conoce también como <em><strong>bug</strong></em>.</li>
+							<li>
+								Es fallo en un programa de computadora o sistema de software que 
+								desencadena un resultado indeseado.
+							</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Explicar el origen de la palabra bug y preguntar sobre los errores mas comunes
+						como desbordamiento de buffer, división por 0, variable no inicializada,
+						memoria no permitida.
+					</aside>
+				</section>
+
+				<section id="tipo-errores">
+					<h2>Tipos de errores</h2>
+					<ul>
+						<li>
+							<strong>En tiempo de compilación</strong>: <br>
+							Evitan que el código fuente se pueda transformar en un ejecutable.
+						</li>
+						<li>
+							<strong>En tiempo de ejecución</strong>: <br>
+							Situaciones específicas en las que un evento externo a un programa
+							impide su ejecución.
+						</li>	
+					</ul>
+					<aside class="notes">
+						Preguntar ejemplo de ambos
+					</aside>
+				</section>
+
+				<section id="porque-pruebas">
+					<h2>¿Por qué <br> hacer pruebas?</h2>
+				</section>
+
+				<section id="porque-pruebas-1">
+					<h2>¿Por qué <br> hacer pruebas?</h2>
+					<p class="text-left">
+						Hagamos estas pregunta, ¿Cuantas veces....
+					</p>
+					<ul>
+						<li>
+							... se ha colgado la computadora o ha dejado de responder?
+						</li>
+						<li>
+							... hemos encontrado errores al realizar ciertos pasos cuando se usa una aplicación?
+						</li>
+						<li>
+							...la aplicación ha fallado cuando un supervisor, cliente, audiencia utiliza un programa realizado por nosotros?
+						</li>
+						<li>
+							...una aplicación no funciona correctamente en una plataforma (como un navegador)?
+						</li>
+					</ul>
+					</p>
+				</section>
+
+				<section id="porque-pruebas-2">
+					<h2>¿Por qué <br> hacer pruebas?</h2>
+					<ul>
+						<li>
+							Las fallas de software suelen ocasionar graves pérdidas económicas, 
+							éstos son <strong>de 10 a 100 veces mas costosos</strong> de 
+							encontrar y reparar.
+						</li>
+						<li>
+							Permite garantizar el correcto funcionamiento 
+							de la aplicación: cumple los requerimientos solicitados, funciona 
+							como se espera, satisface la necesidad de los inversores. 
+							Todo esto permite <strong>aumentar la calidad del mismo</strong>.
+						</li>
+						<li>
+ 							Se pierde menos tiempo al descubrir los errores en la fase de desarrollo y
+ 							poder corregirlos a tiempo.
+						</li>
+					</ul>
+				</section>
+
+				<section id="pruebas-tediosas">
+					<p><strong>Esta bien...sé que debo hacer pruebas</strong></p>
+					<img src="img/qa/mono.png" height="278" width="264" alt="Mono">
+					<p><strong><span class="red">¡Pero son tediosas!</span></strong></p>
+				</section>
+
+				<section id="grandes-fallos">
+					<h2>Grandes fallos de software por no hacer pruebas</h2>
+				</section>
+
+				<section id="grandes-fallos-1">
+					<h3>Mars Climate Orbiter </h3>
+					<div class="left half">
+						<ul>
+							<li>
+								El satélite ingresó con un ángulo erróneo a la atmósfera de marte y se incendió.
+							</li>
+							<li>
+								El problema fue que la entrada estaba en metros y no en pies.
+							</li>
+							<li>
+								No se realizaron pruebas de todas las piezas en conjunto. Ya que fueron realizadas en distintas partes del mundo.
+							</li>
+							<li>
+								Se perdieron 327.6 millones de dólares.
+							</li>
+						</ul>
+					</div>
+					<div class="left half">
+						<img src="img/qa/mars.png" alt="Mars orbiter">
+					</div>
+				</section>
+
+				<section id="grandes-fallos-2">
+					<h3>Fallo en matemático en procesadores Pentium</h3>
+					<div class="left half">
+						<ul>
+							<li>
+								La precisión de los cálculos matemáticos se perdía (sin importar) a partir del 8vo dígito.
+							</li>
+							<li>
+								El problema fue cuando un profesor de la universidad de Virginia encontró el error y luego se supo que Intel sabía del problema.
+							</li>
+							<li>
+								Intel gastó 275 millones de dolares para sustituir los procesadores a quienes les afectaba este bug.
+							</li>
+						</ul>
+					</div>
+					<div class="left half">
+						<img src="img/qa/pentium.png" alt="Pentium chip">
+					</div>
+				</section>
+
+				<section id="grandes-fallos-3">
+					<h3>Windows Genuine Disadvantage</h3>
+					<ul>
+						<li>
+							El 24 de agosto del 2007, un empleado de Microsoft subió código no probado a los servidores de WGA. 
+						</li>
+						<li>
+							El bug hizo que miles de instalaciones a nivel mundial fuesen marcadas como copias ilegales.
+						</li>
+						<li>
+							En el caso de Vista desactivaba funciones importantes del S.O.
+						</li>
+					</ul>
+				</section>
+
+				<section id="grandes-fallos-4">
+					<h3>Therac-25</h3>
+					<div class="left half">
+						<ul>
+							<li>
+								Una máquina para radioterapia. Contaba con una pistola de rayos X y de electrones.
+							</li>
+						</ul>
+					</div>
+					<div class="left half">
+						<img src="img/qa/threac.png" alt="Therac-25">
+					</div>
+					<ul>
+						<li>
+							Tenia un bug de condición de carrera al momento de cambiar de modo, donde se 
+							activaba la pistola de rayos X sin aviso envenenando a la persona con radiación.
+						</li>
+						<li>
+							 El problema era que la validación de los límites de radiación se hacía por 
+							 hardware. Al crear este modelo no hizo esa limitación pero instalaron el mismo
+							 software de una máquina anterior sin realizar pruebas por confiarse en que ya
+							 funcionaba correctamente.
+						</li>
+					</ul>
+				</section>
+	
+				<section id="grandes-fallos-5">
+					<h3>Sistema de detección de misiles rusos</h3>
+					<div class="left half">
+						<ul>
+							<li>
+								El 23 de septiembre de 1983 el sistema de defensa de misiles soviéticos detecto 
+								un lanzamiento de un misil nuclear por parte de E.E.U.U.
+							</li>
+							<li>
+								El bug era causado por una variedad de fallas encontradas posteriormente en el 
+								sistema, entre ellas, ignorar el calor producido por el sol.
+							</li>
+						</ul>
+					</div>
+					<div class="left half">
+						<img src="img/qa/misiles.png" class="noborder" alt="Therac-25">
+					</div>
+				</section>
+				</section>
+
+				<section id="preocupacion">
+					<p><strong>¡Definitivamente debo hacer pruebas!</strong></p>
+					<img src="img/qa/preocupacion.png" alt="Preocupacion">
+					<p><strong><span class="red">¿Pero cómo empiezo?</span></strong></p>
+				</section>
+
+				<section id="IEEE829">
+					<h2>IEEE 829</h2>
+					<p class="text-left">
+						Estándar para documentar pruebas de software, compuesto de 8
+						etapas del proceso de documentación.
+					</p>
+					<ul>
+						<li>Planeación de las pruebas.</li>
+						<li>Especificación del diseño de prueba.</li>
+						<li>Especificación de los casos de prueba.</li>
+						<li>Especificación del procedimiento.</li>
+						<li>Reporte de avance de los ciclos probados.</li>
+						<li>Registro de la prueba.</li>
+						<li>Reporte de incidentes.</li>
+						<li>Sumario de la prueba</li>
+					</ul>
+					<p class="right">
+						<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=741968" title="Documento oficial">
+							Enlace al documento oficial
+						</a>
+					</p>
+					<aside class="notes">
+						Institute of Electrical and Electronic Engineers.
+						Si se quiere gran calidad se puede certificar en este estandar.
+					</aside>
+				</section>
+	
+				<section id="ISO25010">
+					<h2>ISO/IEC 25010:2011</h2>
+					<p class="text-left">
+						Modelo de evaluación de calidad de software; aporta
+						características sencillas de evaluación y medición.
+					</p>
+					<ul>
+						<li>
+							Modelo de calidad Métricas externas 
+							(Aseguramiento de calidad)
+						</li>
+						<li>
+							Métricas internas (Desarrollo)
+						</li>
+						<li>
+							Métricas de calidad en uso (Producto final)
+						</li>
+					</ul>
+				</section>
+
+
+				<section id="conceptos">
+					<h1>Definiciones <br> básicas</h1>
+				</section>
+
+				<section id="conceptos-basicos-1">
+					<h2>Definiciones básicas</h2>
+
+					<h3>Prueba (Test)</h3>
+					<ul>
+						<li>
+							Según la RAE es: Razón, argumento, instrumento u otro medio
+							con que se pretende mostrar y hacer patente la verdad o
+							falsedad de algo.
+						</li>
+						<li>
+							En otras palabras, es la actividad para demostrar a través de
+							una evaluación si es verdad que el software cumple con unas
+							condiciones especificadas.
+						</li>
+					</ul>
+ 					<h3>Caso de prueba (Test Case)</h3>
+ 					<ul>
+						<li>
+							Según César Javier Acuña (2013), es el conjunto de
+							entradas y condiciones que arrojan resultados esperados
+							desarrollados con un objetivo particular.
+						</li>
+					</ul>
+				</section>
+
+				<section id="conceptos-basicos-2">
+					<h2>Definiciones básicas</h2>
+					<h3>Error (bug)</h3>
+					<ul>
+						<li>
+							Según la RAE es: Acción desacertada o equivocada.
+						</li>
+						<li>
+							Puede ser humana o del sistema, pero al ocurrir
+							genera resultados incorrectos.
+						</li>
+						<li>
+							En otras palabras, es la actividad para demostrar a través de
+							una evaluación si es verdad que el software cumple con unas
+							condiciones especificadas.
+						</li>
+					</ul>
+ 					<h3>Falla</h3>
+ 					<ul>
+						<li>
+							Es el resultado visible, palpable que se produce un error.
+						</li>
+					</ul>
+				</section>
+
+				<section id="conceptos-basicos-3">
+					<h2>Definiciones básicas</h2>
+					<h3>Validación</h3>
+					<ul>
+						<li>
+							Permite determinar si un sistema o uno de sus
+							componentes cumple los requisitos en un momento
+							determinado.
+						</li>
+					</ul>
+ 					<h3>Metodología de Desarrollo de Software</h3>
+ 					<ul>
+						<li>
+							Según CMS (2008) es un marco de trabajo usado
+							para estructurar, planificar y controlar el proceso de
+							desarrollo en sistemas de información.
+						</li>
+					</ul>
+				</section>
+
+				<section id="pruebas">
+					<h1>Pruebas</h1>
+				</section>
+
+				<section id="objetivos-pruebas">
+					<h2>Objetivo de las pruebas</h2>
+					<ul>
+						<li>
+							Encontrar errores y fallas durante el desarrollo de
+							software. Para tomar medidas de corrección.
+						</li>
+						<li>
+							Errores y fallas mas comunes, que a través
+							de pruebas debemos evitar son:
+						</li>
+					</ul>
+					<div class="left half">
+						<ul>
+							<li>Ciclo infinito</li>
+							<li>
+								Problemas aritméticos como
+								desbordamientos o subdesbordamientos
+							</li>
+							<li>Exceder el tamaño del <em>array</em></li>
+							<li>Utilizar una variable no inicializada</li>
+							<li>División por cero</li>
+						</ul>
+					</div>
+					<div class="left half">
+						<ul>
+							<li>Acceder a memoria no permitida (access violation)</li>
+							<li>Pérdida de memoria (memory leak)</li>
+							<li>Desbordamiento de la pila</li>
+							<li>Desbordamiento de búfer (buffer overflow)</li>
+							<li>Bloqueo mutuo (deadlock)</li>
+							<li>Indizado inadecuado de tabla</li>
+						</ul>
+					</div>
+				</section>
+
+				<section id="pruebas-unitaria">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Pruebas unitarias</h3>
+					<ul>
+						<li>Creadas y ejecutadas por los desarrolladores.</li>
+						<li>Deben ser automatizables (no requerir acciones manuales)</li>
+						<li>Repetibles y reutilizables.</li>
+						<li>Independientes.</li>
+						<li>Codificarse con el mismo profesionalismo que el resto del programa.</li>
+						<li>Son de tipo <strong>“Caja blanca”</strong></li>
+					</ul>
+					<aside class="notes">
+						Caja blanca es que tenemos acceso al codigo fuente. Sabemos que hay.
+					</aside>
+				</section>
+
+				<section id="pruebas-unitaria-ejemplo">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Pruebas unitarias (ejemplo)</h3>
+
+					<pre><code class="php">public function testSave() {
+	$model = new Usuario();
+	$model = $this->fillDefaultData($model);
+	$this->assertTrue($model->save());
+} </code></pre>
+				</section>
+
+				<section id="pruebas-funcionales">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Pruebas funcionales</h3>
+					<ul>
+						<li>Se ejecutan en un ambiente controlado.</li>
+						<li>
+							Deben demostrar que los sistemas cumplen tanto
+							con la calidad como funcionalidad con los
+							requerimientos especificados.
+						</li>
+						<li>
+							Se enfocan desde el punto de vista del usuario:
+							usabilidad, proceso realizados en la interfaz. Y no en
+							el código de software.
+						</li>
+						<li>Son de tipo <strong>“Caja negra”</strong></li>
+						<li>Creadas y ejecutadas por los desarrolladores.</li>
+					</ul>
+					<aside class="notes">
+						Caja blanca es que tenemos acceso al codigo fuente. Sabemos que hay.
+					</aside>
+				</section>
+
+
+				<section id="pruebas-funcionales-ejemplo">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Pruebas funcionales</h3>
+					<pre>
+						<code class="php">public function testCreate()
+{
+	$proyecto = $this->proyectos('proyecto1');
+
+	$this->_login();
+	$this->open('proyecto/create');
+	$this->assertTextPresent('Create Proyecto');
+	$this->type('Proyecto_nombre', $proyecto->nombre);
+	$this->type('Proyecto_descr',$proyecto->descr);
+	$this->type('Proyecto_fecha_creacion',$proyecto->fecha_creacion);
+	$this->type('Proyecto_fecha_culminacion',$proyecto->fecha_culminacion);
+	$this->type('Proyecto_costo_aprox', $proyecto->costo_aprox);
+	$this->click('name=yt0');
+	$this->waitForTextPresent('View Proyecto');
+}</code></pre>
+				</section>
+
+				<section id="pruebas-integracion">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Pruebas de integración</h3>
+					<ul>
+						<li>
+							Son diseñadas para comprobar el correcto
+							funcionamiento de las distintas partes del sistema.
+						</li>
+						<li>
+							Se realizar con la unión pruebas unitarias y
+							segmentos de códigos.
+						</li>
+						<li>
+							Utiliza varias partes del sistema en conjunto, accede
+							a la base de datos, controladores, crea hilos para
+							realizar tareas simultáneas, entre otros.
+						</li>
+					</ul>
+				</section>
+
+				<section id="pruebas-regresion">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Pruebas de regresión</h3>
+					<ul>
+						<li>
+							Son las pruebas realizadas cada vez que se modifica el
+							sistema, un componente, un grupo de unidades entre
+							otros.
+						</li>
+						<li>
+							Validan que todo el desarrollo previo sigue funcionando
+							correctamente a pesar de los cambios introducidos.
+						</li>
+						<li>
+							Permiten garantizar que las funcionalidades ya
+							desarrolladas del sistema son estables.
+						</li>
+						<li>
+							Básicamente es ejecutar todas las pruebas escritas
+							hasta al momento y verificar que culminaron con éxito.
+						</li>
+					</ul>
+				</section>
+
+				<section id="otras-pruebas">
+					<h2>Clasificación de las pruebas</h2>
+					<h3>Otras pruebas</h3>
+					<ul>
+						<li>
+							<strong>Pruebas de usabilidad:</strong> enfocadas desde el punto
+							de vista del usuario, validan que se puede utilizar
+							fácilmente el sistema, la curva de aprendizaje es
+							suave, entre otros.
+						</li>
+
+						<li>
+							<strong>Pruebas de estrés:</strong> prueban como el sistema se
+							comporta en condiciones no favorables, llevando el
+							sistema a límites mas allá de los especificados.
+						</li>
+
+						<li>
+							<strong>Pruebas de rendimiento:</strong> permiten evaluar la
+							efectividad del sistema, los tiempos de respuestas
+							ante diversas situaciones.
+						</li>
+					</ul>
+				</section>
+
+				<section id="pruebas-cuando">
+					<p><strong>Ya sé cuáles pruebas aplicar...pero...</strong></p>
+					<img src="img/qa/cuando.png" alt="Cuando aplicar pruebas">
+					<p><strong><span class="red">¿Cuándo hacerlas?</span></strong></p>
+					<aside class="notes">
+						Preguntar cuando aplicar pruebas
+					</aside>
+				</section>
+
+				<section id="cuando-aplicar-pruebas">
+					<h2>¿Cuándo realizar la <br> fase de pruebas?</h2>
+					<p class="text-left">
+						Depende la metodología
+					</p>
+					<ul>
+						<li>
+							<strong>Cascada:</strong> en ésta metodología las pruebas se
+							realizan al final una vez que se ha terminado todo el
+							desarrollo del prueba.
+						</li>
+						<li>
+							<strong>FDD:</strong> al final de desarrollar una funcionalidad, se
+							realiza la prueba correspondiente a la funcionalidad.
+						</li>
+						<li>
+							<strong>TDD:</strong> se realizan al principio de TODO desarrollo,
+							pues el sistema se va realizando para ir pasando
+							cada una de las pruebas realizadas.
+						</li>
+					</ul>
+				</section>
+
+				<section id="cuando-aplicar-pruebas-2">
+					<h2>¿Cuándo realizar la <br> fase de pruebas?</h2>
+					<p class="text-left">
+						Según el tipo de examen
+					</p>
+					<ul>
+						<li>
+							<strong>Unitaria:</strong> se realiza al finalizar el desarrollo de una
+							clase o una funcionalidad específica.
+							Funcionales: al final de desarr<strong></strong>ollar un requerimiento,
+							un módulo.
+						</li>
+						</li>
+						<li>
+							<strong>Integración y Regresión:</strong> se realizan al realizar
+							cambios importantes en todo el sistema, unión de
+							componentes, o liberación de una nueva versión.
+						</li>
+						<li>
+							<strong>Pruebas de rendimiento y estrés:</strong> se realizan al final
+							todo el desarrollo, pues las optimizaciones se realizan
+							una vez que todo el software ya funcione bien.
+						</li>
+					</ul>
+				</section>
+
+				<section id="enlaces">
+					<h2>Enlaces recomendados</h2>
+					<ul>
+						<li>
+							<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=741968" target="_blank">
+								Documento sobre IEEE 829
+							</a>
+						</li>
+						<li>
+							<a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=35733" target="_blank">
+								ISO/IEC 25010:2011
+							</a>
+						</li>
+						<li>
+							<a href="https://encrypted.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=0CCYQFjAB&amp;url=http%3A%2F%2Fblogs.msdn.com%2Fcfs-filesystemfile.ashx%2F__key%2Fcommunityserver-components-postattachments%2F00-01-15-62-43%2FTesting_2C00_-Testing_2C00_-Testing.pptx&amp;ei=8pzqVKalD7PdsASdmoKgBA&amp;usg=AFQjCNGhyNalWEgHUoxKtZALhXxSCM5GZA&amp;bvm=bv.86475890,d.cWc&amp;cad=rja">
+								Presentación de Microsoft sobre pruebas de software
+							</a>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>¿Preguntas?</h1>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 960,
+    			height: 500,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

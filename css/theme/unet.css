@@ -17,6 +17,7 @@ body {
 .reveal section img { max-width: 80%;}
 .reveal section img.noborder { border: 0; box-shadow: none; background: transparent; }
 .clear { clear: both }
+.red { color: red;}
 
 strong { color: #000033;}
 .reveal blockquote { background: #F2F2F2; padding: 20px; }
