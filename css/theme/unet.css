@@ -36,6 +36,7 @@ strong { color: #000033;}
   text-shadow: 1px 2px 2px #339;
   margin-bottom: 30px;
 }
+.reveal section h3 { color: #84A8FF; }
 .reveal li h3 { margin-top: 40px; }
 
 .reveal section a {

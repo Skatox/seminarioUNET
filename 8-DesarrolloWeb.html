@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Seminario | UNET</title>
+
+		<meta name="description" content="Láminas de la clase de seminario">
+		<meta name="author" content="Miguel Useche">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/unet.css" id="theme-unet">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="slide intro">
+					<div class="unet">
+						<div class="left">
+							<img class="noborder" src="img/UNET.png" alt="UNET Logo">
+						</div>
+						<div class="left">
+							<p id="definition-header">
+								Universidad Nacional Experimental Del Táchira<br />
+								Decanato De Docencia<br />
+								Dpto. Ingeniería Informática
+							</p>
+						</div>
+					</div>
+
+					<h1 class="clear">Desarrollo<br>Web</h1>
+
+					<div class="text-center">
+						<p>
+							<a href="http://skatox.com/" target="_blank">Prof. Miguel Useche</a> <br>
+							<a href="mailto:miguel.useche@unet.edu.ve" target="_blank">miguel.useche@unet.edu.ve</a> - 
+							<a href="http://twitter.com/skatox" target="_blank">@skatox</a>
+						</p>
+					</div>
+				</section>
+
+				<section id="conocimientos-previos">
+					<h2>Conocimientos previos</h2>
+					<ul>
+						<li>Funcionamiento de la WWW</li>
+						<li>Componentes de una página o aplicación web.</li>
+						<li>Conocimientos sobre el desarrollo de aplicaciones web.</li>
+						<li>Nociones sobre diseño de interfaces de usuario.</li>
+						<li>Conocimientos básicos de base de datos.</li>
+					</ul>
+				</section>
+
+				<section id="objetivo-clase">
+					<h2>Objetivo de la clase</h2>
+					<ul>
+						<li class="fragment">Conocer las últimas tendencias de desarrollo web.</li>
+						<li class="fragment">Selección de las mejoras herramientas al iniciar un proyecto web.</li>
+						<li class="fragment">Conocer las técnicas para la optimización de sitios web.</li>
+						<li class="fragment">
+							Conocer los frameworks de desarrollo web mas utilizados.
+						</li>
+					</ul>
+				</section>
+
+				<section id="trabajos">
+					<h2>¿Cómo empezar?</h2>
+					<div class="half left">
+						<h3>Desde 0</h3>
+						<p>
+							Consiste en comenzar el desarrollo de la aplicación
+							desde la creación de cada archivo, librerías, metolodogías 
+							propias. 
+						</p>
+						<p>
+							Descarga e instalación manual de cada componente.
+						</p>
+					</div>
+					<div class="half left">
+						<h3>Base inicial</h3>
+						<p>
+							Consiste en comenzar a partir de una base desarrollada
+							por un tercero, utilizar la organización y metodología
+							usada por este tercero. 
+						</p>
+						<p>
+							Generalmente se utilizan herramientas
+							de generación de código o descarga de proyectos de código abierto.
+						</p>
+					</div>
+				</section>
+
+				<section id="trabajo-cero">
+					<h2>Empezar desde 0</h2>
+					<h3>Ventajas</h3>
+					<ul>
+						<li>Mayor control de todos los aspectos del proyecto. </li>
+						<li>Fácil compresión inicial de la estructura del proyecto.</li>
+						<li>Libre selección de los componentes del proyecto.</li>
+					</ul>
+					<h3>Desventajas</h3>
+					<ul>
+						<li>Requiere mayor tiempo para instalar y entrelazar los componentes iniciales.</li>
+						<li>La seguridad y calidad depende de los conocimientos del programador.</li>
+					</ul>
+					<aside class="notes">
+						Riesgos de no programa la aplicacion muy segura.
+					</aside>
+				</section>
+
+				<section id="usando-base">
+					<h2>Uso de una base inicial</h2>
+					<h3>Ventajas</h3>
+					<ul>
+						<li>Reducción de tiempo para generar la base inicial del proyecto.</li>
+						<li>Generalmente se utilizan estándares, código eficiente y moderno.</li>
+						<li>Facilita el mantenimiento futuro al depender de terceros.</li>
+					</ul>
+					<h3>Desventajas</h3>
+					<ul>
+						<li>
+							Dependecia de programadores externos para el mantenimiento 
+							de partes de la aplicación de terceros.
+						</li>
+						<li>
+							El flujo de trabajo se debe adaptar a las tecnologías que utiliza
+							la base inicial.
+						</li>
+					</ul>
+					<aside class="notes">
+						No es excusa depende de programadores externos si es open source.
+					</aside>
+				</section>
+
+				<section id="base-inicial">
+					<h2>Últimas tendencias en el desarrollo web</h2>
+				</section>
+
+				<section id="hbp">
+					<h2>HTML5 Boilerplate</h2>
+					<div class="third right">
+						<img src="img/webdev/html5-boilerplate.png" height="200" width="200" alt="HBP logo">
+						<p class="text-center">
+							<a href="https://html5boilerplate.com/" target="_blank" title="Enlace al proyecto">
+								Sitio oficial
+							</a>
+						</p>
+					</div>
+					<div class="twothird left">
+						<ul >
+							<li>
+								Plantilla de HTML5 que incluye 
+								<strong>todo lo que debería tener</strong> 
+								un sitio web.
+							</li>
+							<li>Diseñada para funcionar en todos los navegadores.</li>
+							<li>Compatible con dispositivos móviles.</li>
+							<li>
+								Permite armar una plantilla personalizada eligiendo
+								las tecnologías a usar.
+							</li>
+							<li>Elaborada por programadores reconocidos en el área.</li>
+							<li>De <strong>código abierto</strong>.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section id="initializer">
+					<h2>Initializr</h2>
+					<p>Permite crear una plantilla HTML5 boilerplate en pocos segundos.</p>
+					<p>
+						<a href="http://www.initializr.com/" title="Ir al sitio oficial" target="_blank">
+							<img src="img/webdev/Initializer.jpg" height="300" width="600" alt="Sitio de Initializr">
+						</a>
+					</p>
+					<p>
+						Te permite decidir las plataformas 
+						a darle soporte y seleccionar los componentes a incluir. 
+						El generador incluye las últimas versiones de distintos proyectos 
+						que facilitan el desarrollo web.
+					</p>
+				</section>
+
+				<section id="enlaces">
+					<h2>Enlaces recomendados</h2>
+					<ul>
+						<li>
+							<a href="http://www.w3schools.com/jsref/dom_obj_document.asp" target="_blank">
+								Definición de las propiedades del DOM.
+							</a>
+						</li>
+						<li>
+							<a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank">
+								Artículo detallado sobre como funciona un navegador.
+							</a>
+						</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h1>¿Preguntas?</h1>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 960,
+    			height: 500,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
