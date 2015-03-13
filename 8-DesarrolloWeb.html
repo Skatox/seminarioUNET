@@ -90,26 +90,30 @@
 					<h2>¿Cómo empezar?</h2>
 					<div class="half left">
 						<h3>Desde 0</h3>
-						<p>
-							Consiste en comenzar el desarrollo de la aplicación
-							desde la creación de cada archivo, librerías, metolodogías 
-							propias. 
-						</p>
-						<p>
-							Descarga e instalación manual de cada componente.
-						</p>
+						<ul>
+							<li>
+								Consiste en comenzar el desarrollo de la aplicación
+								desde la creación de cada archivo, librerías, metolodogías 
+								propias. 
+							</li>
+							<li>
+								Descarga e instalación manual de cada componente.
+							</li>
+						</ul>
 					</div>
 					<div class="half left">
 						<h3>Base inicial</h3>
-						<p>
-							Consiste en comenzar a partir de una base desarrollada
-							por un tercero, utilizar la organización y metodología
-							usada por este tercero. 
-						</p>
-						<p>
-							Generalmente se utilizan herramientas
-							de generación de código o descarga de proyectos de código abierto.
-						</p>
+						<ul>
+							<li>
+								Comenzar a partir de una base desarrollada
+								por un tercero, utilizar la organización y metodología
+								usada por este tercero. 
+							</li>
+							<li>
+								Generalmente se utilizan herramientas
+								de generación de código o descarga de proyectos de código abierto.
+							</li>
+						</ul>
 					</div>
 				</section>
 
@@ -132,13 +136,16 @@
 				</section>
 
 				<section id="usando-base">
-					<h2>Uso de una base inicial</h2>
+					<h2>Uso de una <br> base inicial</h2>
 					<h3>Ventajas</h3>
 					<ul>
 						<li>Reducción de tiempo para generar la base inicial del proyecto.</li>
 						<li>Generalmente se utilizan estándares, código eficiente y moderno.</li>
 						<li>Facilita el mantenimiento futuro al depender de terceros.</li>
 					</ul>
+				</section>
+				<section id="usando-base">
+					<h2>Uso de una <br> base inicial</h2>
 					<h3>Desventajas</h3>
 					<ul>
 						<li>
@@ -190,19 +197,171 @@
 
 				<section id="initializer">
 					<h2>Initializr</h2>
-					<p>Permite crear una plantilla HTML5 boilerplate en pocos segundos.</p>
-					<p>
-						<a href="http://www.initializr.com/" title="Ir al sitio oficial" target="_blank">
-							<img src="img/webdev/Initializer.jpg" height="300" width="600" alt="Sitio de Initializr">
-						</a>
-					</p>
-					<p>
-						Te permite decidir las plataformas 
-						a darle soporte y seleccionar los componentes a incluir. 
-						El generador incluye las últimas versiones de distintos proyectos 
-						que facilitan el desarrollo web.
-					</p>
+					<ul>
+						<li>
+							Permite crear una plantilla HTML5 boilerplate en pocos segundos. <br>
+							<div class="text-center">
+								<a href="http://www.initializr.com/" title="Ir al sitio oficial" target="_blank">
+									<img src="img/webdev/Initializer.jpg" height="300" width="600" alt="Sitio de Initializr">
+								</a>
+							</div>
+						</li>
+						<li>
+							Permite decidir las plataformas a brindar soporte y seleccionar 
+							los componentes a incluir.
+						</li>
+						<li>
+							El generador incluye las últimas versiones de distintos proyectos 
+							que facilitan el desarrollo web.
+						</li>
+					</ul>
 				</section>
+
+				<section id="yeoman">
+					<h2>Yeoman</h2>
+					<ul>
+						<li>
+							Es un generador de código, permite generar una aplicación base
+							sus componentes estan creados con las mejores prácticas de 
+							desarrollo en pocos segundos.
+						</li>
+						<li>
+							Se conecta directamente a los repositorios de Github, permitiendo tener
+							las versiones actuales, desarrollo, entre otros. 
+						</li>
+						<li>
+							Permite instalar herramientas que permiten agregar partes y componentes
+							a la aplicación automáticamente, como controladores, liberías, clases,
+							vistas, etc.
+						</li>
+					</ul>
+				</section>
+
+				<section id="yeoman2">
+					<h2>Yeoman</h2>
+					<p class="text-left">
+						Está compuesto por 3 herramientas:
+					</p>
+					<div class="half left">
+						<ul>
+							<li>
+								<strong>yo:</strong> genera código, aplicaciones
+								y configuraciones para las demás herramientas de
+								Yeoman.
+							</li>
+							<li>
+								<strong>grunt/gulp:</strong> es el sistema de construcción,
+								permite construir, previsualizar y probar el proyecto.
+							</li>
+							<li>
+								<strong>bower/npm:</strong> utilizado para manejar
+								las dependencias de software.
+							</li>
+						</ul>
+					</div>
+					<div class="half left">
+						<img src="img/webdev/yeoman.png"  alt="Yeoman">
+						<img src="img/webdev/yo_grunt_bower.png" alt="Herramientas de Yeoman">
+					</div>
+				</section>
+
+
+				<section id="yo">
+					<h2>Yeoman</h2>
+					<h3>Ejemplo de uso de yo</h3>
+					<div class="half left">
+						<ul>
+							<li>
+								Se puede usar mediante la línea de comandos:
+								<pre><code class="bash">
+yo angular MiAplicacionAngular
+								</code></pre>
+							</li>
+							<li>
+								Ejemplo de creación de un controlador en Angular:
+								<pre><code class="bash">
+yo angular:controller miControlador
+								</code></pre>
+							</li>
+						</ul>
+					</div>
+					<div class="half left">
+						<ul>
+							<li>
+								Se puede utilizar mediante un asistente.
+							</li>
+						</ul>
+						<img src="img/webdev/yo.png" alt="Ejemplo de Yi">
+					</div>
+				</section>
+
+				<section id="grunt-gulp">
+					<h2>Grunt/Gulp</h2>
+					<ul>
+						<li>
+							Permiten automatizar tareas repetitivas como:
+							optimización de código, recarga de la página ante cambios, 
+							compilación, pruebas unitarias, entre otros. 
+							Para <strong>ahorrar tiempo</strong> de desarrollo.
+						</li>
+						<li>
+							Se pueden importar tareas automatizadas desde NPM <em>(Node Package Manager)</em>
+							o programar tareas propias. Éstas se pueden concatenar para realizar una
+							tarea tras otra.
+						</li>
+						<li>
+							Se pueden programar para evitar intervención humana sino a que se ejecuten
+							cada vez que ocurran ciertos eventos: como al guardar un archivo, detectar
+							ciertos cambios en el código, entre otros.
+						</li>
+					</ul>
+				</section>
+
+				<section id="grunt-gulp-ejemplo">
+					<h2>Grunt/Gulp</h2>
+					<h3>Ejemplo de ejecución</h3>
+					<img src="img/webdev/grunt.png" alt="Ejemplo de grunt">
+				</section>
+
+				<section id="bower">
+					<h2>Bower</h2>
+					<ul>
+						<li>
+							Las aplicaciones suelen estar compuestas de:
+							frameworks, bibliotecas, herramientas, entre otros.
+						</li>
+						<li>
+							Bower permite manejar estas dependencias, al 
+							descargar, instalar y actualizar cada una de ellas 
+							automáticamente.
+						</li>
+					</ul>
+				</section>
+
+				<section id="bower-ejemplo">
+					<h2>Bower</h2>
+					<h3>Ejemplo de bower.json</h3>
+					<pre>
+						<code class="js">{
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "name": "version",
+    "name": "carpeta",
+    "name": "paquete"
+  },
+  "devDependencies": {
+    "frameworkPruebas": "version"
+  }
+}</code>
+					</pre>
+				</section>
+
 
 				<section id="enlaces">
 					<h2>Enlaces recomendados</h2>
@@ -219,6 +378,7 @@
 						</li>
 					</ul>
 				</section>
+
 
 
 				<section>
